@@ -18,9 +18,10 @@ class Matcher:
     """
     cases: pd.DataFrame
     controls: pd.DataFrame
+    match_ratio: int
 
     @staticmethod
-    def sex_age_match(cases: pd.DataFrame, controls: pd.DataFrame) -> Dict[str, List[str]]:
+    def sex_age_match(cases: pd.DataFrame, controls: pd.DataFrame, ratio: int) -> Dict[str, List[str]]:
         """Staticmethod that will be the default matching method for the class. 
         Users can customize this by passing there own matching function to the 
         match method
@@ -37,6 +38,9 @@ class Matcher:
             grids. The program expects a column a column called grids, sex, and age and 
             status. The status of all these grids should be 0.
 
+        ratio : int
+            ratio of how many controls to match with cases
+            
         Returns
         -------
         Dict[str, List[str]]
@@ -69,7 +73,7 @@ class Matcher:
             should take two dataframes as inputs. These will be passed as keyword 
             arguments: 'cases', 'controls'
         """
-        match_func(cases=self.cases, controls=self.controls)
+        match_func(cases=self.cases, controls=self.controls, ratio=self.match_ratio)
 
     @staticmethod
     def _check_right_cols(df: pd.DataFrame, expected_cols: List[str]) -> None:
