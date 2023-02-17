@@ -10,7 +10,8 @@ homepage = "https://github.com/jtb324/matching"
 repository = "https://github.com/jtb324/matching"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8, <3.11"
+pandas = "^1.5.3"
 
 
 [tool.poetry.group.dev.dependencies]
