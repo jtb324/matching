@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "matching"
+version = "0.1.0"
+description = "A python package to help with case control matching"
+authors = ["jtb <james.baker@vanderbilt.edu>"]
+readme = "README.md"
+license = "MIT"
+keywords = ["python", "matching"]
+homepage = "https://github.com/jtb324/matching"
+repository = "https://github.com/jtb324/matching"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
